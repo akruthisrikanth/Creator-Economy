@@ -3,6 +3,7 @@ AS SELECT
 B.Creator_ID,
 name AS Creator_Name,
 A.artist_id AS Artist_ID,
+A.country_code,
 [STRUCT(spotify_followers_zscore AS Spotify_Followers_Zscore, 
 spotify_monthly_listeners_zscore AS Spotify_Monthly_Listeners_Zscore, 
 facebook_likes_zscore AS Facebook_Likes_Zscore, 
