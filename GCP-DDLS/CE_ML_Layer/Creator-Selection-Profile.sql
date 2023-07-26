@@ -1,14 +1,15 @@
 CREATE OR REPLACE TABLE `tech-cali-b2c.CE_ML_Layer.Creator_Selection_Profile` AS
 SELECT
 A.Creator_ID,
-A.Artist_ID,
-A.Creator_Name,
+A.artist_id AS Artist_ID,
+A.name AS Creator_Name,
+A.country_code AS Country_Code,
 " " AS Geographic_Level,
-[STRUCT(A.Twitter_Followers, A.Spotify_Followers, A.Instagram_Followers, A.YouTube_Subscribers, A.TikTok_Followers, A.Instagram_Genz_Followers, A.TikTok_Genz_Followers, A.YouTube_Genz_Subscribers)] AS Audience,
-[STRUCT(A.Twitter_Retweets, A.YouTube_Monthly_Video_Views, A.Spotify_Monthly_Listeners, A.TikTok_Views_Top_Tracks)] AS Content_Performance,
-[STRUCT(A.Instagram_Avg_Engagement_per_Post, A.TikTok_Avg_Engagement_per_Post, A.YouTube_Avg_Engagement_per_Post, A.Facebook_Likes, A.Facebook_Talks)] AS Engagement,
-A.TikTok_Creations_Top_Tracks,
-Z_Score
+[STRUCT(A.twitter_followers, A.spotify_followers, A.instagram_followers, A.youTube_subscribers, A.tikTok_followers, A.Instagram_Genz_followers, A.TikTok_Genz_followers, A.Youtube_Genz_subscribers)] AS Audience,
+[STRUCT(A.twitter_retweets, A.youtube_monthly_video_views, A.spotify_monthly_listeners, A.TikTok_total_views_for_top_n_tracks)] AS Content_Performance,
+[STRUCT(A.Instagram_avg_engagements_per_post, A.TikTok_avg_engagements_per_post, A.Youtube_avg_engagements_per_post, A.facebook_likes, A.facebook_talks)] AS Engagement,
+A.TikTok_total_creations_for_top_n_tracks,
+B.Z_Score
 FROM
 `tech-cali-b2c.CE_Analytics_Layer.Creator_Social_Profile` A
 LEFT JOIN 
