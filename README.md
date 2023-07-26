@@ -2,8 +2,11 @@
 
 # Overview
 The mission of #CreatorEconomy value prop is to build a suite of data products & services aimed at supporting both brands & creators to enable them to thrive in this new age of content driven economy. The value prop tackles the following entities:
+
 Creators: Content, creation, launch, distribution, monetization & partnership strategies
+
 Brand: Co-marketing / influencer / Affiliate marketing strategies, Partner/Creator identification & qualification, GTM strategies & measurement
+
 Trends: identification, qualification, virality measurement.
 
 The value prop will be developed in collaboration with multiple teams across Latentview:
