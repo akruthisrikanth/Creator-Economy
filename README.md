@@ -36,3 +36,8 @@ Marketing Landing Page with the following details
 Page describing the services & offerings on #CreatorEconomy
 Page describing the Creator/influencer selection Tool
 Blogs on the impact of influencer marketing on business
+
+# Detailed Documentation Links:
+Overall Datahub design: https://lv-knowledgemanagement.atlassian.net/l/cp/M9ijLaSs
+Scoring Model: https://lv-knowledgemanagement.atlassian.net/l/cp/6Fv78KWD
+Git and Cloud Source Repositories: https://lv-knowledgemanagement.atlassian.net/l/cp/GxsY2dLK
