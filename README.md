@@ -9,7 +9,6 @@ Brand: Co-marketing / influencer / Affiliate marketing strategies, Partner/Creat
 
 Trends: identification, qualification, virality measurement.
 
-
 # Key collaterals:
 Creator/Influencer selection Tool developed using Power platform
 # Infrastructure
@@ -28,5 +27,7 @@ Creator/Influencer selection Tool developed using Power platform
 
 # Detailed Documentation Links:
 Overall Datahub design: https://lv-knowledgemanagement.atlassian.net/l/cp/M9ijLaSs
+
 Scoring Model: https://lv-knowledgemanagement.atlassian.net/l/cp/6Fv78KWD
+
 Git and Cloud Source Repositories: https://lv-knowledgemanagement.atlassian.net/l/cp/GxsY2dLK
