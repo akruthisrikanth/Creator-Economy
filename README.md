@@ -31,3 +31,5 @@ Overall Datahub design: https://lv-knowledgemanagement.atlassian.net/l/cp/M9ijLa
 Scoring Model: https://lv-knowledgemanagement.atlassian.net/l/cp/6Fv78KWD
 
 Git and Cloud Source Repositories: https://lv-knowledgemanagement.atlassian.net/l/cp/GxsY2dLK
+
+Creator Economy Deck: https://docs.google.com/presentation/d/1ywaigkxcVN6hxD_Cn31b8egieDtqfYrD
