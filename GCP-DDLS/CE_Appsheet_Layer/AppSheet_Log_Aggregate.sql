@@ -9,7 +9,7 @@ WITH Creators_Log_Aggregate AS(
 GROUP BY 1,2,3
 ) ,
 Albums_Log_Aggregate AS(
-  SELECT "Creators" AS Table_Name,
+  SELECT "Albums" AS Table_Name,
   `Updated_At` AS Contribution_Timestamp,
   `Updated_By` AS Contribution_By,
   COUNT(DISTINCT Log_ID) AS Contributions
@@ -17,7 +17,7 @@ Albums_Log_Aggregate AS(
 GROUP BY 1,2,3
 ) ,
 Entities_Log_Aggregate AS(
-  SELECT "Creators" AS Table_Name,
+  SELECT "Entities" AS Table_Name,
   `Updated_At` AS Contribution_Timestamp,
   `Updated_By` AS Contribution_By,
   COUNT(DISTINCT Log_ID) AS Contributions
@@ -25,7 +25,7 @@ Entities_Log_Aggregate AS(
 GROUP BY 1,2,3
 ) ,
 Influencers_Log_Aggregate AS(
-  SELECT "Creators" AS Table_Name,
+  SELECT "Influencers" AS Table_Name,
   `Updated_At` AS Contribution_Timestamp,
   `Updated_By` AS Contribution_By,
   COUNT(DISTINCT Log_ID) AS Contributions
@@ -33,7 +33,7 @@ Influencers_Log_Aggregate AS(
 GROUP BY 1,2,3
 ) ,
 Music_Artists_Log_Aggregate AS(
-  SELECT "Creators" AS Table_Name,
+  SELECT "Music Artists" AS Table_Name,
   `Updated_At` AS Contribution_Timestamp,
   `Updated_By` AS Contribution_By,
   COUNT(DISTINCT Log_ID) AS Contributions
@@ -41,7 +41,7 @@ Music_Artists_Log_Aggregate AS(
 GROUP BY 1,2,3
 ) ,
 Social_Media_Platform_Log_Aggregate AS(
-  SELECT "Creators" AS Table_Name,
+  SELECT "Social Media Platform" AS Table_Name,
   `Updated_At` AS Contribution_Timestamp,
   `Updated_By` AS Contribution_By,
   COUNT(DISTINCT Log_ID) AS Contributions
@@ -49,7 +49,7 @@ Social_Media_Platform_Log_Aggregate AS(
 GROUP BY 1,2,3
 ) ,
 Social_Profile_Log_Aggregate AS(
-  SELECT "Creators" AS Table_Name,
+  SELECT "Social Profile" AS Table_Name,
   `Updated_At` AS Contribution_Timestamp,
   `Updated_By` AS Contribution_By,
   COUNT(DISTINCT Log_ID) AS Contributions
@@ -57,7 +57,7 @@ Social_Profile_Log_Aggregate AS(
 GROUP BY 1,2,3
 ) ,
 Songs_Log_Aggregate AS(
-  SELECT "Creators" AS Table_Name,
+  SELECT "Songs" AS Table_Name,
   `Updated_At` AS Contribution_Timestamp,
   `Updated_By` AS Contribution_By,
   COUNT(DISTINCT Log_ID) AS Contributions
@@ -65,7 +65,7 @@ Songs_Log_Aggregate AS(
 GROUP BY 1,2,3
 ) ,
 Trends_Log_Aggregate AS(
-  SELECT "Creators" AS Table_Name,
+  SELECT "Trends" AS Table_Name,
   `Updated_At` AS Contribution_Timestamp,
   `Updated_By` AS Contribution_By,
   COUNT(DISTINCT Log_ID) AS Contributions
@@ -73,7 +73,7 @@ Trends_Log_Aggregate AS(
 GROUP BY 1,2,3
 ) ,
 Trends_Videos_Log_Aggregate AS(
-  SELECT "Creators" AS Table_Name,
+  SELECT "Trends x Videos" AS Table_Name,
   `Updated_At` AS Contribution_Timestamp,
   `Updated_By` AS Contribution_By,
   COUNT(DISTINCT Log_ID) AS Contributions
@@ -102,4 +102,4 @@ MERGE_ALL AS(
   SELECT * FROM Trends_Videos_Log_Aggregate
 )
 
-SELECT *, DATE_TRUNC(Contribution_Timestamp, DAY) AS Contribution_Date, DATE_TRUNC(Contribution_Timestamp, MONTH) AS Contribution_Month, DATE_TRUNC(Contribution_Timestamp, QUARTER) AS Contribution_Quarter FROM MERGE_ALL
+SELECT *, DATE_TRUNC(Contribution_Timestamp, DAY) AS Contribution_Date,DATE_TRUNC(Contribution_Timestamp, MONTH) AS Contribution_Month, DATE_TRUNC(Contribution_Timestamp, QUARTER) AS Contribution_Quarter FROM MERGE_ALL
