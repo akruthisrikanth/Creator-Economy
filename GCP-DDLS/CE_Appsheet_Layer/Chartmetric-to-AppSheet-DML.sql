@@ -39,7 +39,8 @@ SAFE_CAST(A.TikTok_followers AS INT64) AS Num_Followers,
 FROM `CE_Appsheet_Layer.Chartmetric_Raw` A
 LEFT JOIN `CE_Appsheet_Layer.Creators` B
 ON A.name = B.Creator_Name)
-WHERE row_num = 1;
+WHERE row_num = 1
+AND Num_Followers IS NOT NULL;
 
 
 INSERT INTO `CE_Appsheet_Layer.Social_Profile`(Social_Profile_ID, Creator_Name, Entity_Type, Social_Media_Platform_ID, Social_Media_Platform, Num_Followers, Entity_ID)
@@ -57,7 +58,8 @@ FROM `CE_Appsheet_Layer.Chartmetric_Raw` A
 LEFT JOIN 
 `CE_Appsheet_Layer.Creators` B
 ON A.name = B.Creator_Name)
-WHERE row_num = 1;
+WHERE row_num = 1
+AND Num_Followers IS NOT NULL;
 
 INSERT INTO `CE_Appsheet_Layer.Social_Profile`(Social_Profile_ID, Creator_Name, Entity_Type, Social_Media_Platform_ID, Social_Media_Platform, Num_Followers, Entity_ID)
 SELECT GENERATE_UUID(),Creator_Name,"Artists","658be9ea","Twitter", Num_Followers,"adfa7ea8" FROM(
@@ -74,7 +76,8 @@ FROM `CE_Appsheet_Layer.Chartmetric_Raw` A
 LEFT JOIN 
 `CE_Appsheet_Layer.Creators` B
 ON A.name = B.Creator_Name)
-WHERE row_num = 1;
+WHERE row_num = 1
+AND Num_Followers IS NOT NULL;
 
 INSERT INTO `CE_Appsheet_Layer.Social_Profile`(Social_Profile_ID, Creator_Name, Entity_Type, Social_Media_Platform_ID, Social_Media_Platform, Num_Followers, Entity_ID)
 SELECT GENERATE_UUID(),Creator_Name,"Artists","842fb81e","Instagram", Num_Followers,"adfa7ea8" FROM(
@@ -91,4 +94,5 @@ FROM `CE_Appsheet_Layer.Chartmetric_Raw` A
 LEFT JOIN 
 `CE_Appsheet_Layer.Creators` B
 ON A.name = B.Creator_Name)
-where row_num = 1;
+where row_num = 1
+AND Num_Followers IS NOT NULL;
