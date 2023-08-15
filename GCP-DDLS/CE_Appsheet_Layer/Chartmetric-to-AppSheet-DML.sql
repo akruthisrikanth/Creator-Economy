@@ -17,8 +17,7 @@ GENERATE_UUID(),
 "Artists",
 "Music",
 Creator_Name
-FROM `CE_Appsheet_Layer.Creators`
-WHERE Artist = TRUE;
+FROM `CE_Appsheet_Layer.Creators`;
 
 ----------------------------------------------------------------------------------------------------------------
 INSERT INTO `CE_Appsheet_Layer.Social_Profile`(Social_Profile_ID, Creator_Name, Entity_Type, Social_Media_Platform_ID, Social_Media_Platform, Num_Followers, Entity_ID)
