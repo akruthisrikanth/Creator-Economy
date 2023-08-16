@@ -24,6 +24,7 @@ country_code,
 True,
 "adfa7ea8"
 FROM `CE_Appsheet_Layer.Chartmetric_Raw`;
+-- WHERE Snapshot_Date = '2023-08-16';
 
 ----------------------------------------------------------------------------------------------------------------
 INSERT INTO `CE_Appsheet_Layer.Music_Artists`(Creator_ID, Artist_ID, Entity_Type, Artist_Type, Artist_name)
@@ -34,6 +35,8 @@ GENERATE_UUID(),
 "Music",
 Creator_Name
 FROM `CE_Appsheet_Layer.Creators`;
+-- WHERE Creator_ID NOT IN (SELECT Creator_ID FROM `CE_Appsheet_Layer.Music_Artists`)
+-- and Creator_Name not in ('Justin Bieber', 'Taylor Swift', 'Selena Gomez', 'Miley Cyrus', 'Kiran and Nivi', 'Matt Steffanina');
 
 ----------------------------------------------------------------------------------------------------------------
 INSERT INTO `CE_Appsheet_Layer.Social_Profile`(Social_Profile_ID, Creator_Name, Entity_Type, Social_Media_Platform_ID, Social_Media_Platform, Num_Followers, Entity_ID)
@@ -47,7 +50,9 @@ SAFE_CAST(A.TikTok_followers AS INT64) AS Num_Followers,
 "adfa7ea8"
 FROM `CE_Appsheet_Layer.Chartmetric_Raw` A
 LEFT JOIN `CE_Appsheet_Layer.Creators` B
-ON A.name = B.Creator_Name)
+ON A.name = B.Creator_Name
+-- WHERE A.Snapshot_Date = '2023-08-16'
+)
 WHERE Num_Followers IS NOT NULL;
 
 
@@ -64,7 +69,9 @@ SAFE_CAST(A.Youtube_subscribers AS INT64) AS Num_Followers,
 FROM `CE_Appsheet_Layer.Chartmetric_Raw` A
 LEFT JOIN 
 `CE_Appsheet_Layer.Creators` B
-ON A.name = B.Creator_Name)
+ON A.name = B.Creator_Name
+--WHERE A.Snapshot_Date = '2023-08-16'
+)
 WHERE Num_Followers IS NOT NULL;
 
 INSERT INTO `CE_Appsheet_Layer.Social_Profile`(Social_Profile_ID, Creator_Name, Entity_Type, Social_Media_Platform_ID, Social_Media_Platform, Num_Followers, Entity_ID)
@@ -80,7 +87,9 @@ SAFE_CAST(A.twitter_followers AS INT64) AS Num_Followers,
 FROM `CE_Appsheet_Layer.Chartmetric_Raw` A
 LEFT JOIN 
 `CE_Appsheet_Layer.Creators` B
-ON A.name = B.Creator_Name)
+ON A.name = B.Creator_Name
+--WHERE A.Snapshot_Date = '2023-08-16'
+)
 WHERE Num_Followers IS NOT NULL;
 
 INSERT INTO `CE_Appsheet_Layer.Social_Profile`(Social_Profile_ID, Creator_Name, Entity_Type, Social_Media_Platform_ID, Social_Media_Platform, Num_Followers, Entity_ID)
@@ -96,5 +105,7 @@ SAFE_CAST(A.Instagram_followers AS INT64) AS Num_Followers,
 FROM `CE_Appsheet_Layer.Chartmetric_Raw` A
 LEFT JOIN 
 `CE_Appsheet_Layer.Creators` B
-ON A.name = B.Creator_Name)
+ON A.name = B.Creator_Name
+--WHERE A.Snapshot_Date = '2023-08-16'
+)
 WHERE Num_Followers IS NOT NULL;
