@@ -10,6 +10,9 @@ FROM (
     `CE_Appsheet_Layer.Chartmetric_Raw`)
 WHERE
   row_num = 1;
+
+-------------------------------------------------------------------------------------------------------------
+ALTER TABLE `CE_Appsheet_Layer.Chartmetric_Raw` DROP COLUMN row_num;
 -------------------------------------------------------------------------------------------------------------
 
 INSERT INTO `CE_Appsheet_Layer.Creators`(Creator_ID, Entity_Type, Creator_Name, Location, Artist, Entity_ID)
