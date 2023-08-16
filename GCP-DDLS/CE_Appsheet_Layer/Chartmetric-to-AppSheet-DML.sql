@@ -1,6 +1,6 @@
 INSERT INTO `CE_Appsheet_Layer.Creators`(Creator_ID, Entity_Type, Creator_Name, Location, Artist, Entity_ID)
 SELECT
-B.Creator_ID, 
+GENERATE_UUID(), 
 "Artists",
 A.name,
 A.country_code,
