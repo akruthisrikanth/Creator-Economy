@@ -14,6 +14,9 @@ FROM
   RankedData
 WHERE
   row_num = 1;
+
+----------------------------------------------------------------------------------------------------------------------
+ALTER TABLE `CE_External_Source.Chartmetric_Raw` DROP COLUMN row_num;
 ----------------------------------------------------------------------------------------------------------------------
 
 CREATE OR REPLACE TABLE `CE_Datahub.CE_Entities`(Entity_ID STRING, Entity_Name STRING, Entity_Type STRING);
