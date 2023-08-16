@@ -1,18 +1,31 @@
+CREATE OR REPLACE TABLE
+  `CE_Appsheet_Layer.Chartmetric_Raw` AS
+SELECT
+  *
+FROM (
+  SELECT
+    *,
+    ROW_NUMBER() OVER(PARTITION BY name) AS row_num
+  FROM
+    `CE_Appsheet_Layer.Chartmetric_Raw`)
+WHERE
+  row_num = 1;
+-------------------------------------------------------------------------------------------------------------
+
 INSERT INTO `CE_Appsheet_Layer.Creators`(Creator_ID, Entity_Type, Creator_Name, Location, Artist, Entity_ID)
 SELECT
 GENERATE_UUID(), 
 "Artists",
-A.name,
-A.country_code,
+name,
+country_code,
 True,
 "adfa7ea8"
-FROM `CE_Appsheet_Layer.Chartmetric_Raw` A
-LEFT JOIN `CE_Appsheet_Layer.Creator_Artist_Map` B
-ON A.artist_id = B.Artist_ID;
+FROM `CE_Appsheet_Layer.Chartmetric_Raw`;
 
 ----------------------------------------------------------------------------------------------------------------
 INSERT INTO `CE_Appsheet_Layer.Music_Artists`(Creator_ID, Artist_ID, Entity_Type, Artist_Type, Artist_name)
-SELECT Creator_ID,
+SELECT 
+Creator_ID,
 GENERATE_UUID(),
 "Artists",
 "Music",
