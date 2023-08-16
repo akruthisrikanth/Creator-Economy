@@ -3,7 +3,7 @@ AS
 WITH RankedData AS (
   SELECT
   *,
-    ROW_NUMBER() OVER (PARTITION BY name ORDER BY Snapshot_Date DESC) AS row_num
+    ROW_NUMBER() OVER (PARTITION BY artist_id ORDER BY Snapshot_Date DESC) AS row_num
   FROM
     `CE_External_Source.Chartmetric_Raw`
 )
